@@ -4,6 +4,8 @@ import br.com.alura.screenmatch.modelos.Episodio;
 import br.com.alura.screenmatch.modelos.Filme;
 import br.com.alura.screenmatch.modelos.Serie;
 
+import java.util.ArrayList;
+
 public class Main {
     public static void main(String[] args){
         Filme meuFilme = new Filme();
@@ -52,5 +54,22 @@ public class Main {
         episodio.setTotalVisualizacoes(2000);
         filtro.filtra(episodio);
 
+        var filmeDiogo = new Filme();
+        filmeDiogo.setDuracaoEmMinutos(210);
+        filmeDiogo.setNome("Carros 3");
+        filmeDiogo.setAnoDeLancamento(2017);
+        filmeDiogo.avalia(10);
+
+        ArrayList<Filme> listaDeFilmes = new ArrayList<>();
+        listaDeFilmes.add(filmeDiogo);
+        listaDeFilmes.add(meuFilme);
+        listaDeFilmes.add(outroFilme);
+        System.out.println("Tamanho da lista: "+listaDeFilmes.size());
+        System.out.println("Primeiro Filme: "+listaDeFilmes.get(0).getNome());
+
+        for (int i = 0; i < listaDeFilmes.size(); i++){
+            System.out.println("Indice "+ i + ": " + listaDeFilmes.get(i));
+        }
+        System.out.println("toString do filme: "+listaDeFilmes.get(0).toString());
     }
 }
