@@ -1,3 +1,5 @@
+package br.com.alura.screenmatch.principal;
+
 import br.com.alura.screenmatch.calculo.CalculadoraDeTempo;
 import br.com.alura.screenmatch.calculo.FiltroRecomendacao;
 import br.com.alura.screenmatch.modelos.Episodio;
@@ -8,8 +10,7 @@ import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args){
-        Filme meuFilme = new Filme("A ilha do medo");
-        meuFilme.setAnoDeLancamento(2010);
+        Filme meuFilme = new Filme("A ilha do medo", 2010);
         meuFilme.setIncluidoNoPlano(true);
         meuFilme.setDuracaoEmMinutos(120);
 
@@ -21,18 +22,14 @@ public class Main {
         System.out.println("Total de avaliações: " + meuFilme.getTotalDeAvaliacoes());
         System.out.println(meuFilme.retornaMedia());
 
-        Serie serie = new Serie();
-
-        serie.setNome("The Good Doctor");
-        serie.setAnoDeLancamento(2017);
+        Serie serie = new Serie("The Good Doctor", 2017);
         serie.exibeFichaTecnica();
         serie.setTemporadas(7);
         serie.setEpisodiosPorTemporada(20);
         serie.setMinutosPorEpisodio(50);
         System.out.println("Duração da serie: "+serie.getDuracaoEmMinutos()+" minutos");
 
-        Filme outroFilme = new Filme("Avatar 3");
-        outroFilme.setAnoDeLancamento(2026);
+        Filme outroFilme = new Filme("Avatar 3", 2026);
         outroFilme.setIncluidoNoPlano(true);
         outroFilme.setDuracaoEmMinutos(185);
 
@@ -52,9 +49,8 @@ public class Main {
         episodio.setTotalVisualizacoes(2000);
         filtro.filtra(episodio);
 
-        var filmeDiogo = new Filme("Monstros S.A");
+        var filmeDiogo = new Filme("Monstros S.A", 2017);
         filmeDiogo.setDuracaoEmMinutos(210);
-        filmeDiogo.setAnoDeLancamento(2017);
         filmeDiogo.avalia(10);
 
         ArrayList<Filme> listaDeFilmes = new ArrayList<>();
